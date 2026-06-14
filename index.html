@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>FF ENGINE · Week 2</title>
+<title>FF ENGINE · Week 3</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -82,6 +82,11 @@
   .ex .scheme{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--accent2);white-space:nowrap;background:rgba(255,171,46,.08);border:1px solid rgba(255,171,46,.2);padding:4px 8px;border-radius:8px;}
   .ex .cue{font-size:12px;color:var(--muted);line-height:1.5;margin-top:7px;}
   .ex .cue em{color:var(--accent2);font-style:normal;}
+  .lastweek{margin-top:9px;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.025);
+     border:1px solid var(--line);border-left:2px solid var(--dim);border-radius:7px;padding:6px 10px;
+     font-family:var(--mono);font-size:11.5px;color:#aeb9cc;line-height:1.4;}
+  .lastweek b{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--dim);
+     text-transform:uppercase;flex-shrink:0;}
 
   /* warm-up inside card */
   .exwarm{margin-top:10px;background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:8px;padding:7px 10px;
@@ -292,7 +297,7 @@
 <div class="wrap">
   <header>
     <div class="kicker">Firefighter Acceleration · Block A</div>
-    <h1>FF <span>ENGINE</span><br>WEEK 2</h1>
+    <h1>FF <span>ENGINE</span><br>WEEK 3</h1>
     <div class="sub">2 strength (maintain) + 3 cardio (priority) + 2 rest. Cardio is the gate — strength holds on low volume. Target: pass &amp; exceed Bucks bleep (8.6), build the engine underneath it.</div>
     <div class="banner"><b>How to use:</b> each set has its <b>own weight + own feel + own tick</b>. Tap a set's feel pill (E/O/H) to mark just that set. Warm-ups are specified per lift — don't skip them. End each day with the <b>strongest/weakest</b> reflection. Hit <b>"Copy log for Claude"</b> and paste it back to me.</div>
 
@@ -367,50 +372,58 @@
 <script>
 /* ---------------- PROGRAM DATA ---------------- */
 const PROGRAM = {
-  week: "WEEK 2",
+  week: "WEEK 3",
   days: [
     { id:"d1", tag:"MON", short:"Strength A", type:"Strength", focus:"Full body · lower + push emphasis",
       cool:"Cooldown: 3–5 min walk + quad/hip stretch.",
       kind:"strength",
       ex:[
-        { n:"Back Squat", s:"4 × 5", sets:4, rest:180, t:"~57.5 kg", unit:"kg",
-          warm:"Bar × 8  →  30kg × 5  →  45kg × 3  →  working sets",
-          c:"Brace hard, parallel depth, controlled descent. <em>RPE 7 — ~3 reps left at rep 5.</em>" },
-        { n:"Bench Press", s:"4 × 5", sets:4, rest:150, t:"57.5 kg", unit:"kg",
+        { n:"Back Squat", s:"4 × 5", sets:4, rest:180, t:"62.5 kg", unit:"kg",
+          last:"57.5kg × 4×5 — all Easy",
+          warm:"Bar × 8  →  40kg × 5  →  55kg × 3  →  working sets",
+          c:"Brace hard, parallel depth, controlled descent. <em>Up 5kg — you earned it. RPE 7, ~3 reps left at rep 5.</em>" },
+        { n:"Bench Press", s:"4 × 5", sets:4, rest:150, t:"57.5 kg (HOLD)", unit:"kg",
+          last:"57.5kg × 4×5 — all Hard",
           warm:"Bar × 10  →  30kg × 5  →  45kg × 3  →  working sets",
-          c:"Shoulder blades pinned, control down, leg drive. <em>All 4 working sets at target — don't ramp into them.</em>" },
-        { n:"Pull-ups", s:"4 × 6", sets:4, rest:120, t:"BW ×2  +  +5kg ×2", unit:"free",
+          c:"<em>Hold 57.5 — don't add weight yet. Goal: get a couple of these sets to drift from Hard → OK. THEN we push 60.</em>" },
+        { n:"Pull-ups", s:"4 × 6", sets:4, rest:120, t:"+5 kg × 4 sets", unit:"free",
+          last:"2× +2.5kg, 2× +5kg",
           warm:"2 × 15s dead hang + 3 BW reps to activate",
-          c:"Full dead hang, chin clearly over the bar, no kip. <em>Sets 1–2 at bodyweight, sets 3–4 with +5kg. NO jumping to +10kg — that's what blew up set 4 last time.</em>" },
-        { n:"Romanian Deadlift", s:"3 × 8", sets:3, rest:120, t:"~55 kg", unit:"kg",
-          warm:"Bar × 8  →  40kg × 5  →  working sets",
-          c:"Hinge at hips, soft knees, feel hamstrings, neutral spine. RPE 7." },
-        { n:"Farmer Carry", s:"3 × 40 m", sets:3, rest:90, t:"22–24 kg / hand", unit:"kg/hand",
+          c:"Full dead hang, chin over bar, no kip. <em>Consolidate at +5kg for all 4 sets. If all clean → +7.5kg on 2 sets next week.</em>" },
+        { n:"Romanian Deadlift", s:"3 × 8", sets:3, rest:120, t:"57.5 kg", unit:"kg",
+          last:"55kg × 3×8 (Easy/Easy/OK) — dizzy after",
+          warm:"Bar × 8  →  45kg × 5  →  working sets",
+          c:"Hinge, soft knees, neutral spine. RPE 7. <em>EXHALE on the way up (don't hold breath), and WALK after each set — don't sit. Fixes the dizziness.</em>" },
+        { n:"Farmer Carry", s:"3 × 40 m", sets:3, rest:90, t:"26 kg / hand", unit:"kg/hand",
+          last:"24kg × 3×40m — unbroken ✓",
           warm:"Light DBs × 20m to wake up the grip",
-          c:"Tall posture, crush handles. <em>Goal: 40m UNBROKEN — set down only at the line.</em>" },
-        { n:"Hanging Leg Raise", s:"3 × 10–12", sets:3, rest:60, t:"BW (use straps)", unit:"reps",
-          warm:"Dead hang 20s + 3–5 easy knee raises",
-          c:"No swing, slow down. <em>Use straps so abs are the limiter — or swap to V-ups / ab wheel.</em>" }
+          c:"Tall posture, crush handles. <em>Up to 26kg. Goal still 40m UNBROKEN — if grip slips before the line, that's your new edge, hold 26 till clean.</em>" },
+        { n:"Ab Wheel / V-ups", s:"3 × 10–12", sets:3, rest:60, t:"Bodyweight", unit:"reps",
+          last:"Hanging leg raise — grip-limited, no straps",
+          warm:"A few slow reps to find range",
+          c:"<em>Swapped off hanging raises so grip stops capping your abs.</em> Ab wheel rollouts (knees) or V-ups — slow, controlled, no momentum. Lying leg raises if neither." }
       ]},
 
-    { id:"d2", tag:"TUE", short:"Bleep / Shuttle", type:"Cardio · Specific", focus:"Turn economy + pacing (the free levels)",
+    { id:"d2", tag:"TUE", short:"Bleep Test", type:"Cardio · Benchmark", focus:"Get the real number — IF stitch-free & fresh",
       warm:"6–8 min easy jog + leg swings, A-skips, then 3 × 20m strides building to fast.",
       cool:"Cooldown: 5 min easy + calf & hip stretch.",
       kind:"cardio",
       audio:{
         src:"audios/ShuttleIntervals_20m_Lvl8_50sRun_70sWalk.mp3",
-        title:"20m Shuttle Audio · Level 8",
+        title:"20m Shuttle Audio · Level 8 (fallback only)",
         rounds:8, prepTime:8, runTime:50, walkTime:70, totalTime:898
       },
       ex:[
-        { n:"Shuttle Intervals", s:"8 rounds", sets:8, rest:0, t:"50s hard / 70s easy", unit:"free",
-          c:"20m shuttles. 50s at ~level-8 pace, 70s walk-back. <em>Plant & pivot tight on turns — don't overrun.</em> Even effort, don't redline.",
-          logType:"cardio", logPH:"e.g. round 1 OK, pace fine, turns sloppy by 6" },
-        { n:"Turn drill (optional)", s:"2 × 10", sets:2, rest:0, t:"decel + plant", unit:"free",
-          c:"10 fast decel-and-turns each side. Short approach, low hips, sharp plant.",
-          logType:"cardio", logPH:"optional" }
+        { n:"Full Bleep Test (primary)", s:"to failure", sets:1, rest:0, t:"Measured 20m · daytime · fed 90min before", unit:"free",
+          last:"8 shuttle rounds, mostly Easy (~level 8)",
+          c:"Standard progressive bleep test, run to failure, record the level. <em>MEASURE the 20m properly (tape, or 20 strides) and mark both ends.</em> Use a standard bleep-test app (starts level 1 — NOT the level-8 shuttle audio). <em>ONLY do this if the stitch is gone and you feel fresh.</em>",
+          logType:"cardio", logPH:"e.g. reached level 9.4" },
+        { n:"OR — 8× Shuttle (fallback)", s:"8 rounds", sets:8, rest:0, t:"50s hard / 70s easy", unit:"free",
+          last:"Distance was ~slightly short last time",
+          c:"If the stitch flares or you're not fresh: do the 8-round shuttle set instead (use the audio above) and we benchmark next week. Tight turns, even pacing.",
+          logType:"cardio", logPH:"e.g. round 1 OK, pace fine" }
       ],
-      note:"Every ~2 weeks, swap this for a FULL bleep test to benchmark (record the level)." },
+      note:"Decision: stitch GONE + feeling fresh → do the full bleep test for a real number. Stitch still there → fallback shuttles, test moves to Week 4. No deadline beats sorting the stitch out properly." },
 
     { id:"d3", tag:"WED", short:"REST", type:"Recovery", focus:"", kind:"rest",
       msg:"Full rest or a 20–30 min easy walk + 5 min hip/ankle mobility. Adaptation happens here — prioritise sleep and protein." },
@@ -419,24 +432,30 @@ const PROGRAM = {
       cool:"Cooldown: 3–5 min walk + shoulder & hip stretch.",
       kind:"strength",
       ex:[
-        { n:"Front Squat", s:"4 × 5", sets:4, rest:180, t:"~45 kg", unit:"kg",
-          warm:"Bar × 8  →  25kg × 5  →  35kg × 3  →  working sets",
-          c:"Elbows high, upright torso, brace. ~75–80% of back squat. RPE 7." },
-        { n:"Overhead Press", s:"4 × 6", sets:4, rest:150, t:"~30 kg", unit:"kg",
-          warm:"Bar × 8  →  20kg × 5  →  25kg × 3  →  working sets",
-          c:"Glutes tight, ribs down, press up & head through at the top. <em>Shoulder stability = flagged weak point.</em>" },
-        { n:"Strict / Weighted Pull-ups", s:"4 × 6", sets:4, rest:120, t:"+5 kg (small steps!)", unit:"free",
+        { n:"Front Squat", s:"4 × 5", sets:4, rest:180, t:"47.5 kg", unit:"kg",
+          last:"45kg × 4×5 — all OK (HR spike, yawning)",
+          warm:"Bar × 8  →  30kg × 5  →  40kg × 3  →  working sets",
+          c:"Elbows high, upright torso, brace. <em>Small +2.5kg bump. EXHALE up, WALK after each set instead of sitting — same fix as the RDL dizziness.</em>" },
+        { n:"Overhead Press", s:"4 × 6", sets:4, rest:150, t:"+35 kg added (≈46 true)", unit:"kg",
+          last:"+30kg × 4×6 — all Easy (~41 true on Smith)",
+          warm:"Bar × 8  →  +20kg × 5  →  +30kg × 3  →  working sets",
+          c:"Glutes tight, ribs down, press up & head through. <em>Was too light — jump to +35kg. Aim OK by set 4. (Smith base ~11.3kg, count as you have been.)</em>" },
+        { n:"Strict / Weighted Pull-ups", s:"4 × 6", sets:4, rest:120, t:"+5 kg × 4 sets", unit:"free",
+          last:"+2.5→+5kg (Easy / OK×3)",
           warm:"2 × 15s dead hang + 4 BW reps",
-          c:"Controlled, full range. <em>+2.5 to +5kg steps only — never jump +10kg.</em>" },
-        { n:"Bulgarian Split Squat", s:"3 × 8 / leg", sets:3, rest:90, t:"BW or 2×12–16kg", unit:"kg",
-          warm:"Bodyweight × 8/leg (weaker side first) to activate",
-          c:"<em>Start with WEAKER leg, then match reps on stronger side.</em> Directly fixes your L/R imbalance." },
-        { n:"Sled Push", s:"5 × 20 m", sets:5, rest:90, t:"Moderate–heavy", unit:"kg",
+          c:"Controlled, full range. <em>Straight to +5kg for all 4 sets — no warm-up-in. If all OK → step up next week.</em>" },
+        { n:"Bulgarian Split Squat", s:"3 × 8 / leg", sets:3, rest:90, t:"12 kg DBs / hand", unit:"kg",
+          last:"10kg DBs × 3×8/leg — left weaker",
+          warm:"Bodyweight × 8/leg (weaker side first)",
+          c:"<em>Up to 12kg. Start with the WEAKER (left) leg, then match reps on the right.</em> Closing the L/R gap is the whole point." },
+        { n:"Sled Push", s:"5 × 20 m", sets:5, rest:90, t:"60kg set 1 → 70kg sets 2–5", unit:"kg",
+          last:"+60kg, ~10–11s/20m (could do more)",
           warm:"Empty sled × 20m walk + 1 light push",
-          c:"Low body angle, drive through the legs, don't stall mid-track. Firefighter work capacity." },
-        { n:"Face Pulls", s:"3 × 15", sets:3, rest:45, t:"Light–moderate", unit:"kg",
-          warm:"Light band × 12 to warm shoulders",
-          c:"Pull to forehead, squeeze rear delts & hold 1s. Shoulder health." }
+          c:"Log seconds per 20m in the reps box. <em>Push to 70kg — aiming for 12–15s/length where the cardio cost shows. FIX TRACTION: tighter shoes, or go socks/barefoot (no soft running shoes).</em>" },
+        { n:"Rear-Delt Flies", s:"3 × 15", sets:3, rest:45, t:"5 kg DBs / hand", unit:"kg",
+          last:"Face pulls SKIPPED — no cables",
+          warm:"Light reps × 12 to warm shoulders",
+          c:"<em>Cable-free swap for face pulls.</em> Bent at hips, chest forward, raise DBs out to the sides to parallel — lead with elbows, 1s squeeze, slow down. Go 6–7.5kg if 5 is too light. (Band pull-aparts also work.)" }
       ]},
 
     { id:"d5", tag:"FRI", short:"Easy Run", type:"Cardio · Base", focus:"Zone 2 — build the engine",
@@ -444,84 +463,45 @@ const PROGRAM = {
       cool:"Cooldown: 3 min walk + light stretch.",
       kind:"cardio",
       ex:[
-        { n:"Easy Continuous Run", s:"30 min", sets:1, rest:0, t:"Conversational · ~65% HR · SLOWER not faster", unit:"free",
-          c:"<em>Must feel easy — full sentences, nose-breathing-able.</em> If avg HR creeps above 145, slow down. You should be able to drop to a walk without touching the speed.",
+        { n:"Easy Continuous Run", s:"30 min", sets:1, rest:0, t:"Conversational · SLOWER not faster", unit:"free",
+          last:"Missed last week",
+          c:"<em>Must feel easy — full sentences, could drop to a walk without changing speed.</em> If avg HR creeps above 145, slow down. <em>Stitch prevention: nothing solid within 2h, sip don't chug, belly-breathe (belly out on inhale).</em>",
           logType:"cardio", logPH:"e.g. 4.0km / 30min / felt easy" },
         { n:"Dead Hangs (finisher)", s:"3 × max", sets:3, rest:60, t:"BW", unit:"sec",
-          c:"Hang for max time, relaxed shoulders. Log seconds per hang.",
+          last:"Skipped last week",
+          c:"Hang for max time, relaxed shoulders. Log seconds per hang. Cheap grip work — don't skip it again.",
           logType:"cardio", logPH:"e.g. 55s" }
       ]},
 
-    { id:"d6", tag:"SAT", short:"Intervals", type:"Cardio · VO₂", focus:"Raise the ceiling",
-      warm:"8–10 min easy jog + 3 strides.",
+    { id:"d6", tag:"SAT", short:"Intervals", type:"Cardio · VO₂", focus:"Raise the ceiling — clean & even",
+      warm:"8–10 min easy jog + 3 strides. Eat 90min before, hydrate 1–2h before.",
       cool:"Cooldown: 5–10 min easy jog + stretch.",
       kind:"cardio",
       ex:[
-        { n:"400m Intervals", s:"6 × 400 m", sets:6, rest:0, t:"~5k effort · 90s rest", unit:"free",
-          c:"Hard but CONTROLLED — ~5k race pace. 90s easy walk/jog between. <em>Stay even: rep 6 should match rep 1.</em>",
-          logType:"cardio", logPH:"e.g. ~1:45" }
+        { n:"400m Intervals", s:"6 × 400 m", sets:6, rest:0, t:"EVEN splits ~1:50–2:00 · 90s+ rest", unit:"free",
+          last:"1:45–1:59 clean (sets 1–3), stitch wrecked 4–6",
+          c:"<em>This week's goal is a CLEAN, stitch-free 6 — not a fast 6.</em> Don't chase 1:45 if it costs the back half. Belly-breathe; exhale as your RIGHT foot lands. <em>If a stitch doesn't clear in 60s of slowing — STOP the session.</em> Same loop you measured.",
+          logType:"cardio", logPH:"e.g. 1:55" }
       ],
-      note:"Alt option: 5 × 3 min hard / 2 min easy. Pick one, log which." },
+      note:"Alt: 5 × 3 min hard / 2 min easy. Take all the rest you need — extra rest is fine." },
 
     { id:"d7", tag:"SUN", short:"REST", type:"Recovery", focus:"", kind:"rest",
-      msg:"Full recovery. Sleep + protein. Paste me your week's logs and I'll build Week 3." },
+      msg:"Full recovery. Sleep + protein. Paste me your week's logs and I'll build Week 4." },
 
     { id:"stats", tag:"📊", short:"Stats", type:"Progress", kind:"stats" }
   ]
 };
 
-/* ---------------- DAY 1 PRE-FILL (Mon Strength A — restart session) ---------------- */
-const PREFILL_D1 = {
-  ex: {
-    0: { sets:[
-        { v:"57.5", r:"5", feel:"Easy", done:true },
-        { v:"57.5", r:"5", feel:"Easy", done:true },
-        { v:"57.5", r:"5", feel:"Easy", done:true },
-        { v:"57.5", r:"5", feel:"Easy", done:true } ],
-      notes:"All 4 working sets clean at 57.5kg, all Easy. Next Strength A: push to 62.5kg." },
-    1: { sets:[
-        { v:"57.5", r:"5", feel:"Hard", done:true },
-        { v:"57.5", r:"5", feel:"Hard", done:true },
-        { v:"57.5", r:"5", feel:"Hard", done:true },
-        { v:"57.5", r:"5", feel:"Hard", done:true } ],
-      notes:"Heavy but doable — 4 working sets at 57.5kg held. Hold next time; aim for some sets to drift to OK before pushing 60." },
-    2: { sets:[
-        { v:"+2.5kg", r:"6", feel:"Easy", done:true },
-        { v:"+2.5kg", r:"6", feel:"Easy", done:true },
-        { v:"+5kg",   r:"6", feel:"OK",   done:true },
-        { v:"+5kg",   r:"6", feel:"Hard", done:true } ],
-      notes:"All controlled. Sensible 2× 2.5kg + 2× 5kg progression. Next: 4× 5kg target." },
-    3: { sets:[
-        { v:"55", r:"8", feel:"Easy", done:true },
-        { v:"55", r:"8", feel:"Easy", done:true },
-        { v:"55", r:"8", feel:"OK",   done:true } ],
-      notes:"Brief dizziness after last set — exhale on the way up, walk it off, eat 60-90 min before. 55kg clean → push 57.5 next time." },
-    4: { sets:[
-        { v:"24", r:"40m", feel:"OK", done:true },
-        { v:"24", r:"40m", feel:"OK", done:true },
-        { v:"24", r:"40m", feel:"OK", done:true } ],
-      notes:"All 3× 24kg/40m unbroken — big improvement vs last attempt. Next: 26kg or tighter rest." },
-    5: { sets:[
-        { v:"BW", r:"10", feel:"OK",   done:true },
-        { v:"BW", r:"10", feel:"OK",   done:true },
-        { v:"BW", r:"",   feel:"Hard", done:true } ],
-      notes:"No straps available — better than last week. Switching to V-ups / ab wheel next session to skip the grip issue." }
-  },
-  reflection: {
-    strongest: "Back squats clean — 57.5×4 all Easy.",
-    weakest:   "No specific limiter this session — all areas held up.",
-    overall:   "OK"
-  }
-};
+/* (Week 2 prefill removed — Week 3 starts clean) */
 
 /* ---------------- STATE + STORAGE ---------------- */
-const SKEY = "ff_engine_tracker_v2";
+const SKEY = "ff_engine_tracker_v3";
 let state = {};
 let activeView = "d1";
 
 function blankSet(){ return { v:"", r:"", feel:"", done:false }; }
 function blankFor(){
-  const s = { version:"v2", activeView:"d1", log:{} };
+  const s = { version:"v3", activeView:"d1", log:{} };
   PROGRAM.days.forEach(d=>{
     if(d.kind==="stats") return;
     s.log[d.id] = { rest:false, reflection:{ strongest:"", weakest:"", overall:"" }, ex:{} };
@@ -529,12 +509,7 @@ function blankFor(){
       s.log[d.id].ex[i] = { sets: Array(e.sets).fill(0).map(()=>blankSet()), notes:"" };
     });
   });
-  // pre-fill Day 1 with Monday Strength A session
-  Object.entries(PREFILL_D1.ex).forEach(([i,data])=>{
-    s.log.d1.ex[+i].sets = data.sets.map(x=>({...x}));
-    s.log.d1.ex[+i].notes = data.notes;
-  });
-  s.log.d1.reflection = {...PREFILL_D1.reflection};
+  // Week 3 starts clean — no prefill
   return s;
 }
 async function loadState(){
@@ -544,7 +519,7 @@ async function loadState(){
     if(raw) loaded = JSON.parse(raw);
   }catch(e){ loaded=null; }
   const base = blankFor();
-  if(loaded && loaded.version==="v2"){
+  if(loaded && loaded.version==="v3"){
     base.activeView = loaded.activeView || "d1";
     Object.keys(base.log).forEach(did=>{
       const L = loaded.log && loaded.log[did]; if(!L) return;
@@ -760,6 +735,7 @@ function renderDay(d){
     card.className="ex"+(d.kind==="cardio"?" cardio":"");
     let h=`<div class="top"><div class="nm">${e.n}</div><div class="scheme">${e.s}</div></div>`;
     h+=`<div class="cue">${e.c}</div>`;
+    if(e.last){ h+=`<div class="lastweek"><b>Last wk</b><span>${e.last}</span></div>`; }
     if(e.warm){ h+=`<div class="exwarm"><b>Warm-up</b>${e.warm}</div>`; }
     h+=`<div class="metarow"><div class="meta target"><div class="k">Target</div><div class="v">${e.t}</div></div>`;
     if(e.rest>0){ const m=Math.floor(e.rest/60), sc=e.rest%60; h+=`<div class="meta restbtn" data-rest="${e.rest}" data-name="${e.n}"><div class="k">Rest · tap to start</div><div class="v">${m}:${String(sc).padStart(2,'0')}</div></div>`; }
@@ -825,7 +801,7 @@ function renderDay(d){
   const rfx=document.createElement("div"); rfx.className="reflect";
   rfx.innerHTML=`
     <h3>End of session</h3>
-    <p>Helps me adjust Week 3 faster. Skip if you don't have it.</p>
+    <p>Helps me adjust Week 4 faster. Skip if you don't have it.</p>
     <div class="rfield"><span class="rk">What felt strongest</span>
       <textarea data-rf="strongest" placeholder="e.g. legs — squats clean, RDL progressed">${esc(R.strongest)}</textarea></div>
     <div class="rfield"><span class="rk">What felt weakest</span>
@@ -859,7 +835,7 @@ function esc(s){ return String(s||"").replace(/&/g,"&amp;").replace(/"/g,"&quot;
 function renderStats(){
   const p=document.getElementById("dayPanel"); p.innerHTML="";
   const head=document.createElement("div"); head.className="dayhead";
-  head.innerHTML=`<div class="type">Progress</div><h2>Stats</h2><div class="focus">Week 2 baseline · will grow week over week</div>`;
+  head.innerHTML=`<div class="type">Progress</div><h2>Stats</h2><div class="focus">Week 3 · tracking progress week over week</div>`;
   p.appendChild(head);
 
   // Summary
@@ -876,7 +852,7 @@ function renderStats(){
   });
   const sum=document.createElement("div"); sum.className="ex statsCard";
   sum.innerHTML=`
-    <div class="top"><div class="nm">Week 2 Summary</div></div>
+    <div class="top"><div class="nm">Week 3 Summary</div></div>
     <div class="statgrid">
       <div class="statcell"><div class="k">Sets done</div><div class="v">${totalDone}<span style="font-size:13px;color:var(--muted);"> / ${totalAll}</span></div></div>
       <div class="statcell"><div class="k">Completion</div><div class="v">${totalAll?Math.round(totalDone/totalAll*100):0}%</div></div>
@@ -884,6 +860,48 @@ function renderStats(){
       <div class="statcell"><div class="k">Cardio</div><div class="v">${cardioDone}<span style="font-size:13px;color:var(--muted);"> / ${cardioAll}</span></div></div>
     </div>`;
   p.appendChild(sum);
+
+  // ---- Week-over-week progression (hardcoded history W1→W3) ----
+  const PROG = [
+    { n:"Back Squat",   unit:"kg", pts:[{label:"W1",value:57.5},{label:"W2",value:57.5},{label:"W3",value:62.5}], note:"W1 ramped → W2 clean ×4 Easy → W3 +5kg" },
+    { n:"Bench Press",  unit:"kg", pts:[{label:"W1",value:57.5},{label:"W2",value:57.5},{label:"W3",value:57.5}], note:"Holding 57.5 till Hard → OK, then push 60" },
+    { n:"Overhead Press (true)", unit:"kg", pts:[{label:"W2",value:41},{label:"W3",value:46}], note:"Too easy at 41 → +5kg this week" },
+    { n:"Farmer Carry", unit:"kg", pts:[{label:"W1",value:24},{label:"W2",value:24},{label:"W3",value:26}], note:"W1 slipped @30m → W2 unbroken → W3 +2kg" },
+    { n:"Sled Push",    unit:"kg", pts:[{label:"W2",value:60},{label:"W3",value:70}], note:"Top working load, +10kg this week" },
+    { n:"Bulgarian SS", unit:"kg", pts:[{label:"W2",value:10},{label:"W3",value:12}], note:"Per-hand DBs, weaker leg leads" }
+  ];
+  const progCard=document.createElement("div"); progCard.className="ex statsCard";
+  let ph=`<div class="top"><div class="nm">Progression W1 → W3</div><div class="scheme">target ▲</div></div>
+    <div class="cue" style="margin-bottom:4px;">Last point on each line is this week's <em>target</em> (not yet logged).</div>`;
+  progCard.innerHTML=ph;
+  p.appendChild(progCard);
+  PROG.forEach(item=>{
+    const c=document.createElement("div"); c.className="ex statsCard";
+    const top=item.pts[item.pts.length-1].value;
+    c.innerHTML=`<div class="top"><div class="nm" style="font-size:15px;">${item.n}</div>
+        <div class="scheme">→ ${top}${item.unit}</div></div>
+      <div class="spark">${sparkline(item.pts)}</div>
+      <div style="font-size:11px;color:var(--dim);margin-top:6px;font-family:var(--mono);">${item.note}</div>`;
+    p.appendChild(c);
+  });
+
+  // Cardio progression (text — not single-number)
+  const cardioCard=document.createElement("div"); cardioCard.className="ex statsCard";
+  cardioCard.innerHTML=`<div class="top"><div class="nm" style="font-size:15px;">Cardio</div></div>
+    <div class="pellets">
+      <span class="pellet">Bleep baseline <b>7.1</b> (stale)</span>
+      <span class="pellet easy">Shuttles <b>8/8 rounds</b> Easy</span>
+      <span class="pellet">400m clean <b>1:45–1:59</b></span>
+      <span class="pellet hard">Stitch <b>limiting factor</b></span>
+    </div>
+    <div style="font-size:11px;color:var(--dim);margin-top:8px;font-family:var(--mono);line-height:1.5;">
+      Next real number = bleep test (Tue, if stitch-free). Engine looks well past 7.1 — you cruised 8 shuttle rounds.</div>`;
+  p.appendChild(cardioCard);
+
+  const divider=document.createElement("div");
+  divider.style.cssText="font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase;margin:18px 0 4px;text-align:center;";
+  divider.textContent="— this week's logged sets —";
+  p.appendChild(divider);
 
   // Per-lift cards (strength only, with logged data)
   let any=false;
